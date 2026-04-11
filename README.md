@@ -100,6 +100,7 @@ Analyze how customer purchasing behavior evolves over time after their first pur
 
 🖥️ Query: [4_cohort Retention.sql](4_cohort Retention.sql)
 
+
 **📈 Visualization:**
 
 <img src="images/4_Cohort Retention Over Time.png" alt="Customer Churn by Cohort Year" style="width: 50%; height: auto;">
