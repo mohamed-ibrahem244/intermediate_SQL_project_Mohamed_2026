@@ -72,6 +72,62 @@ Analysis of customer behavior, retention, and lifetime value for an e-commerce c
 - Re-engage high-value churned customers by focusing on targeted win-back campaigns rather than broad retention efforts, as reactivating valuable users may yield higher ROI.  
 - Predict & preempt churn risk and use customer-specific warning indicators to proactively intervene with at-risk users before they lapse.
 
+
+## 4. Cohort Retention (Repeat Purchase Activity)
+
+### Objective
+Analyze how customer purchasing behavior evolves over time after their first purchase by tracking repeat activity across cohorts.
+
+---
+
+### 🔍 Approach
+
+- Grouped customers into cohorts based on their **first purchase month**
+- Calculated **months since first purchase** for each order
+- Aggregated **distinct active customers** per cohort and time interval
+- Computed:
+  - Customers retained per month
+  - Cohort size
+  - Retention rate (% of cohort active in each period)
+
+🖥️ Query: `4_cohort_retention_matrix.sql`
+
+---
+
+### 📊 Key Findings
+
+- **Extremely low short-term retention:**  
+  Most cohorts show very low repeat purchases in month 1 (~0.3%–0.7%)
+
+- **Irregular return behavior:**  
+  Customers do not return consistently month-to-month — activity appears in scattered later months
+
+- **Long-tail reactivation:**  
+  Some customers return even after 2–5+ years (e.g., month 60+), indicating long purchase cycles
+
+---
+
+### 💡 Business Insights
+
+- **Early churn is critical:**  
+  The biggest drop happens immediately after the first purchase → onboarding and early engagement are key
+
+- **Customers are not habitual buyers:**  
+  The business likely operates in a **low-frequency purchase category**
+
+- **Reactivation opportunities exist:**  
+  Since customers return after long gaps, targeted re-engagement campaigns could unlock value
+
+---
+
+### ⚠️ Note on Interpretation
+
+This analysis measures:
+
+👉 **Exact-month repeat activity** (customers active in each specific month after first purchase)
+
+This differs from cumulative retention and results in a **sparse retention pattern**, reflecting irregular customer behavior.
+
 ## Strategic Recommendations
 
 1. **Customer Value Optimization** (Customer Segmentation)
@@ -92,4 +148,4 @@ Analysis of customer behavior, retention, and lifetime value for an e-commerce c
 ## Technical Details
 - **Database:** PostgreSQL
 - **Analysis Tools:** PostgreSQL, DBeaver, PGadmin
-- **Visualization:** ChatGPT, google gemini
+- **Visualization:** ChatGPT
