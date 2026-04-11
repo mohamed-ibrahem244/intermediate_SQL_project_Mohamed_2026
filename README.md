@@ -98,7 +98,7 @@ Analyze how customer purchasing behavior evolves over time after their first pur
   - Cohort size
   - Retention rate (% of cohort active in each period)
 
-🖥️ Query: [4_cohort Retention.sql](4_cohort Retention.sql)
+🖥️ Query: [4_cohort_retention.sql](4_cohort_retention.sql)
 
 
 **📈 Visualization:**
