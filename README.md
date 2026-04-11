@@ -1,12 +1,20 @@
 # Intermediate SQL - Sales Analysis
 
 ## Overview
-Analysis of customer behavior, retention, and lifetime value for an e-commerce company to improve customer retention and maximize revenue.
+This project analyzes customer behavior for an e-commerce business using SQL, focusing on customer value, retention, and revenue trends.
 
+The goal is to understand:
+- Who the most valuable customers are
+- How customer value evolves over time
+- How well customers are retained
+- Where opportunities exist to improve revenue and retention
+
+The analysis combines customer segmentation, cohort analysis, and retention modeling to generate actionable business insights.
 ## Business Questions
 1. **Customer Segmentation:** Who are our most valuable customers?
 2. **Cohort Analysis:** How do different customer groups generate revenue?
 3. **Retention Analysis:** Which customers haven't purchased recently?
+4. **Cohort Retention Behavior:** How frequently do customers return after their first purchase, and what patterns exist in long-term engagement?
 
 ## Analysis Approach
 
@@ -90,9 +98,11 @@ Analyze how customer purchasing behavior evolves over time after their first pur
   - Cohort size
   - Retention rate (% of cohort active in each period)
 
-🖥️ Query: `4_cohort_retention_matrix.sql`
+🖥️ Query: [4_cohort Retention.sql](4_cohort Retention.sql)
 
----
+**📈 Visualization:**
+
+<img src="images/4_Cohort Retention Over Time.png" alt="Customer Churn by Cohort Year" style="width: 50%; height: auto;">
 
 ### 📊 Key Findings
 
@@ -130,20 +140,52 @@ This differs from cumulative retention and results in a **sparse retention patte
 
 ## Strategic Recommendations
 
-1. **Customer Value Optimization** (Customer Segmentation)
-   - Launch VIP program for 12,372 high-value customers (66% revenue)
-   - Create personalized upgrade paths for mid-value segment ($66.6M → $135.4M opportunity)
-   - Design price-sensitive promotions for low-value segment to increase purchase frequency
+### 1. Focus on High-Value Customers
+- High-value customers generate ~66% of total revenue
+- Prioritize retention through:
+  - VIP programs
+  - exclusive offers
+  - personalized experiences
+- Losing a small number of these customers has a significant revenue impact
 
-2. **Cohort Performance Strategy** (Customer Revenue by Cohort)
-   - Target 2022-2024 cohorts with personalized re-engagement offers
-   - Implement loyalty/subscription programs to stabilize revenue fluctuations
-   - Apply successful strategies from high-spending 2016-2018 cohorts to newer customers
+---
 
-3. **Retention & Churn Prevention** (Customer Retention)
-   - Strengthen first 1-2 year engagement with onboarding incentives and loyalty rewards
-   - Focus on targeted win-back campaigns for high-value churned customers
-   - Implement proactive intervention system for at-risk customers before they lapse
+### 2. Improve Early Customer Retention
+- ~90% of customers churn after initial engagement
+- Most drop-off occurs within the first 1–2 months
+- Recommended actions:
+  - onboarding campaigns
+  - first-purchase incentives
+  - targeted follow-ups within 30–60 days
+
+---
+
+### 3. Increase Customer Value (Not Just Volume)
+- Customer acquisition is increasing, but revenue per customer is declining
+- Focus on:
+  - upselling and cross-selling strategies
+  - improving pricing and product positioning
+  - targeting higher-quality customer segments
+
+---
+
+### 4. Leverage Reactivation Opportunities
+- Customers return even after long gaps (12–60+ months)
+- Indicates potential for re-engagement
+- Recommended actions:
+  - win-back campaigns
+  - email marketing targeting inactive users
+  - personalized offers based on past behavior
+
+---
+
+### 5. Investigate Declining Cohort Performance
+- Newer cohorts (2022–2024) generate less revenue per customer
+- Potential causes:
+  - weaker acquisition channels
+  - changes in customer profile
+  - reduced product value perception
+- Further analysis recommended on acquisition sources and customer demographics
 
 ## Technical Details
 - **Database:** PostgreSQL
